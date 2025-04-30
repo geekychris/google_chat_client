@@ -1,0 +1,46 @@
+# Google Chat CLI Application Configuration
+
+# Spring configuration
+spring:
+  application:
+    name: Google Chat CLI
+  main:
+    banner-mode: off
+
+# Google Chat configuration  
+google:
+  chat:
+    application-name: Google Chat CLI
+    credentials-file-path: credentials.json
+    tokens-directory-path: tokens
+    scopes:
+      - https://www.googleapis.com/auth/chat.spaces
+      - https://www.googleapis.com/auth/chat.messages
+    port: 8888
+    host: localhost
+
+# Logging configuration
+logging:
+  level:
+    root: INFO
+    com.warp.googlechat: INFO
+    org.springframework.shell: INFO
+  pattern:
+    console: "%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(%5p) %clr(${PID:- }){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n%wEx"
+  file:
+    name: logs/googlechat-cli.log
+    max-size: 10MB
+    max-history: 7
+
+# Spring Shell configuration
+spring.shell:
+  command:
+    history:
+      enabled: true
+  history:
+    name: .googlechat_shell_history
+    path: ${user.home}
+  prompt:
+    text: "google-chat:> "
+    color: green
+
