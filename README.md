@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/logo.png" alt="Google Chat Client logo" width="180">
+</p>
+
 # Google Chat Integration
 
 A Java library and command-line interface for interacting with Google Chat. This project provides a reusable library for integrating with Google Chat API and a Spring Boot-based CLI application for quick access to common Google Chat operations.
